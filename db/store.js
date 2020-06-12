@@ -15,7 +15,7 @@ class Store {
         return writeFileAsync('db/db.json', JSON.stringify(note));
     };
     getNotes() {
-        return read().then(function(notes){
+        return this.read().then(notes => {
             let parsedNotes;
             try {
                 parsedNotes = [].concat(JSON.parse(notes))
